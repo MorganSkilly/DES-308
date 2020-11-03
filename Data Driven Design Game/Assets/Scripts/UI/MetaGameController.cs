@@ -1,4 +1,4 @@
-using Platformer.Mechanics;
+﻿using Platformer.Mechanics;
 using Platformer.UI;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ namespace Platformer.UI
         /// </summary>
         public GameController gameController;
 
-        bool showMainCanvas = false;
+	    bool showMainCanvas = true;
 
         void OnEnable()
         {

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Platformer.Mechanics
 {
@@ -56,7 +56,8 @@ namespace Platformer.Mechanics
                             token.gameObject.SetActive(false);
                             tokens[i] = null;
 
-                            //Discord.Send("token found");
+	                        if (DataRecorder.recordGemPosition2D(token.transform.position))
+		                        Debug.Log("Token logged");
                         }
                         else
                         {

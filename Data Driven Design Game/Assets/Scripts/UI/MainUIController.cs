@@ -9,8 +9,8 @@ namespace Platformer.UI
     /// </summary>
     public class MainUIController : MonoBehaviour
     {
-        public GameObject[] panels;
-
+	    public GameObject[] panels;
+	    
         public void SetActivePanel(int index)
         {
             for (var i = 0; i < panels.Length; i++)

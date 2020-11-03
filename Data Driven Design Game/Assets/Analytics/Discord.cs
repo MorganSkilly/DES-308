@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Text;
 using UnityEditor;
+using System.Threading.Tasks;
 
 //Discord Webhook Script for Unity
 //Morgan Skillicorn @MorganSkilly
@@ -22,7 +23,7 @@ public class Discord : MonoBehaviour
     [MenuItem("Tools/Discord/Test")]
     public static void SendTestWebhook()
     {
-        Send("Test message recieved successfully! :raised_hands:");
+	    Task.Factory.StartNew(() => Send("Test message recieved successfully! :raised_hands:"));
     }
 #endif
 

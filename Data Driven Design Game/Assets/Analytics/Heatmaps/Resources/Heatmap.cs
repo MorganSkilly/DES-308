@@ -10,31 +10,54 @@ public class Heatmap_BombDrop : MonoBehaviour
 {
     private static List<Vector2> m_deathPositions = new List<Vector2>();
     private static GameObject heatmapPrefab;
-    private static string m_path = "Assets/Analytics/Data";
+    private static string m_path = Application.streamingAssetsPath + "/AnalyticsData";
 
 #if UNITY_EDITOR
-    [MenuItem("Tools/Heatmap/Generate Death Heatmap")]
-    static void ReadDeathData()
-    {
-        m_deathPositions.Clear();
+	[MenuItem("Tools/Heatmap/Generate Death Heatmap")]
+	static void ReadDeathData()
+	{
+		m_deathPositions.Clear();
 
-        string filePath = m_path + "/" + SceneManager.GetActiveScene().name + " deaths";
-        heatmapPrefab = (GameObject)Resources.Load("prefabs/heatmapMarkerPrefab", typeof(GameObject));//Prefab to use to render death positions.
+		string filePath = m_path + "/" + SceneManager.GetActiveScene().name + " deaths";
+		heatmapPrefab = (GameObject)Resources.Load("prefabs/heatmapMarkerPrefab", typeof(GameObject));//Prefab to use to render death positions.
 
-        //Read the text from directly from the txt file
-        string fullPath = filePath + ".txt";
-        StreamReader reader = new StreamReader(fullPath);
+		//Read the text from directly from the txt file
+		string fullPath = filePath + ".txt";
+		StreamReader reader = new StreamReader(fullPath);
 
-        reader = new StreamReader(fullPath);
+		reader = new StreamReader(fullPath);
 
-        string deathCoords = "";
-        while ((deathCoords = reader.ReadLine()) != null) {//going through the text file line by line and adding it to a list of vectors.
-            m_deathPositions.Add(stringToVec(deathCoords));
-            deathCoords = "";
-        }
-        reader.Close();
-       renderDeathData();
-    }
+		string deathCoords = "";
+		while ((deathCoords = reader.ReadLine()) != null) {//going through the text file line by line and adding it to a list of vectors.
+			m_deathPositions.Add(stringToVec(deathCoords));
+			deathCoords = "";
+		}
+		reader.Close();
+		renderDeathData();
+	}
+	
+	[MenuItem("Tools/Heatmap/Generate Gem Heatmap")]
+	static void ReadGemData()
+	{
+		m_deathPositions.Clear();
+
+		string filePath = m_path + "/" + SceneManager.GetActiveScene().name + " gems";
+		heatmapPrefab = (GameObject)Resources.Load("prefabs/heatmapMarkerPrefab", typeof(GameObject));//Prefab to use to render death positions.
+
+		//Read the text from directly from the txt file
+		string fullPath = filePath + ".txt";
+		StreamReader reader = new StreamReader(fullPath);
+
+		reader = new StreamReader(fullPath);
+
+		string deathCoords = "";
+		while ((deathCoords = reader.ReadLine()) != null) {//going through the text file line by line and adding it to a list of vectors.
+			m_deathPositions.Add(stringToVec(deathCoords));
+			deathCoords = "";
+		}
+		reader.Close();
+		renderDeathData();
+	}
 #endif
 
 
