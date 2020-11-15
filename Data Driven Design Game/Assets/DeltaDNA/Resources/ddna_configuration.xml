@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <environment_key_dev>69567164229108694739198000916039</environment_key_dev>
-  <environment_key_live>69567183016716608620790491216039</environment_key_live>
+  <environment_key_dev>23991878520808827140712725216049</environment_key_dev>
+  <environment_key_live>23991891041814647306854933816049</environment_key_live>
   <environment_key>0</environment_key>
-  <collect_url>https://collect19024ds308.deltadna.net/collect/api</collect_url>
-  <engage_url>https://engage19024ds308.deltadna.net</engage_url>
+  <collect_url>https://collect19159mrgns.deltadna.net/collect/api</collect_url>
+  <engage_url>https://engage19159mrgns.deltadna.net</engage_url>
   <hash_secret />
   <client_version />
   <use_application_version>true</use_application_version>
